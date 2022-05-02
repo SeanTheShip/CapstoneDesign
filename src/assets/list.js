@@ -5,8 +5,8 @@ export default [{
     sport: "수영",
     region: "Seoul",
     content: "그렇다 이것이 바로 제곧내, 내용은 따로 없다.",
-    visit: "1",
-    comment: "1",
+    visit: 0,
+    comment: 1,
     date: "22.01.30",
     },
     {
@@ -16,8 +16,8 @@ export default [{
     sport: "축구",
     region: "Seoul",
     content: "That's right there is no special contents in here.",
-    visit: "33",
-    comment: "2",
+    visit: 0,
+    comment: 2,
     date: "22.02.30",
     },
     {
@@ -27,8 +27,8 @@ export default [{
     sport: "야구",
     region: "Suwon",
     content: "벌써 할말이 없다. 생각 좀 해봐야겠다.",
-    visit: "3",
-    comment: "0",
+    visit: 0,
+    comment: 0,
     date: "22.03.30",
     },
     {
@@ -38,8 +38,8 @@ export default [{
     sport: "농구",
     region: "Suwon",
     content: "어쩔수없지 이렇게라도 써야지 긴 내용이 들어가는 자료 하나 만들어 봐서 실험해보지.",
-    visit: "132",
-    comment: "55",
+    visit: 0,
+    comment: 55,
     date: "22.04.30",
     },
     ];

@@ -1,37 +1,24 @@
 <template>
   <div class="background"> 
-    
+    <button>운동의 부족</button>
     <div class="black-bg" v-if="modalClick==true" @click="modalClick=false">
       <div class="white-bg">
         <h4>상세페이지</h4>
         <p>내용</p>
       </div>
-    
     </div>
     
     <div class="navigationbar">
       <a v-for="(nb,i) in navigation" :key="i" @click="modalClick=true">{{navigation[i]}}</a>
     </div>
-  
-    <div class ="big-box">
-      <thebar/>
-      <div class="mini-box">
-        <div v-for="(lb,i) in listbox" :key="i">
-          <div class="list-box">
-            <h6>
-              {{listbox[i].id}} | {{listbox[i].types}} | {{listbox[i].title}} | {{listbox[i].sport}} | {{listbox[i].region}} | {{listbox[i].date}} | 조회수 : {{listbox[i].visit}} | 댓글수 : {{listbox[i].comment}} 
-            </h6>
-          </div>
-        </div>
-      </div>
-    </div>
+    <router-view></router-view>
   </div>
+  
 </template>
 
 <script>
 
-import list from './assets/list.js';
-import Thebar from './components/Commbar.vue';
+
 
 export default {
   name: 'App',
@@ -39,14 +26,11 @@ export default {
   data(){
     return{
       navigation : ['Home', 'Community', 'Gym Rent', 'Matching'],
-      listbox : list,
       dis : 20,
       modalClick : false,
     }
   },
-
   components: {
-    Thebar,
   },
 }
 </script>
@@ -59,7 +43,6 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
-
 body {
   margin : 0;
   padding: 0;
@@ -67,9 +50,18 @@ body {
 }
 
 .background {
-  background: #eee;
+  background: lightcyan;
   height: 100vh;
   overflow: auto;
+}
+
+button {
+  color: black;
+  padding: 10px 20px;
+  position: relative;
+  text-align: center;
+  transition: auto;
+  display: flex;
 }
 
 .navigationbar {
@@ -83,56 +75,16 @@ body {
 
 .navigationbar a { 
   box-sizing: border-box;
-  border : 1px solid;
+  background-color: rgb(80, 173, 235);
+  border : 1px solid black;
   border-radius: 5px;
-  color:  white;
   padding: 1%;
   margin : 1%;
   /* transition : all 0.5s; */
 }
+
 .navigationbar a:hover{
   background : blue;
-}
-
-.list-box {
-  border: 1px solid black;
-  background: white;
-  border-radius: 20px;
-  margin: 2%;
-}
-
-h6 {
-  margin-left: 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  text-align: left;
-  width: 90%;
-}
-
-.mini-box {
-  box-sizing: border-box;
-  background : ivory;
-  margin-top : 5%;
-  width : 90%;
-  padding : auto;
-  border-radius: 5px;
-  margin-left: 5%;
-  border : 1px solid;
-  overflow: hidden;
-  float:left
-}
-
-.big-box {
-  box-sizing: border-box;
-  background: rgb(231, 231, 214);
-  margin-top: 5%;
-  width : 90%;
-  height: 80vh;
-  padding : 10px;
-  margin-left : 5%;
-  border : 1px solid;
-  overflow: hidden;
 }
 
 .black-bg{
